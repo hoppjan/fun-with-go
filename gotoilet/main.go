@@ -7,7 +7,7 @@ import (
 	"unicode/utf8"
 )
 
-// gotoilet counts characters in a file, like wc
+// gotoilet counts stuff in a file, like wc
 func main() {
 	if len(os.Args) <= 2 {
 		log.Fatalln(
