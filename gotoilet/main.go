@@ -12,7 +12,7 @@ func main() {
 		log.Fatalln(
 			"Usage: gotoilet [OPTION] path/to/file..txt\n",
 			"Options:\n",
-			"-c\tcount characters, including line breaks",
+			"-b\tcount bytes",
 		)
 	}
 
@@ -33,7 +33,7 @@ func main() {
 	}
 
 	switch option {
-	case "-c":
+	case "-b":
 		length := len(content)
 		fmt.Println(length)
 	default:
