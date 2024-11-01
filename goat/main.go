@@ -7,7 +7,15 @@ import (
 )
 
 func main() {
-	path := "main.go"
+	if len(os.Args) <= 1 {
+		log.Fatal("Usage: goat path/to/file.go")
+	}
+
+	path := os.Args[1]
+
+	if _, err := os.Stat(path); os.IsNotExist(err) {
+		log.Fatalf("File %s does not exist", path)
+	}
 
 	file, err := os.Open(path)
 	if err != nil {
