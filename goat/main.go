@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// goat prints the contents of the files named as its arguments, like cat
 func main() {
 	if len(os.Args) <= 1 {
 		log.Fatal("Usage: goat path/to/file.go path/to/another.txt")
