@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"unicode/utf8"
 )
 
 // gotoilet counts characters in a file, like wc
@@ -12,6 +13,7 @@ func main() {
 		log.Fatalln(
 			"Usage: gotoilet [OPTION] path/to/file..txt\n",
 			"Options:\n",
+			"-r\tcount runes\n",
 			"-b\tcount bytes",
 		)
 	}
@@ -33,6 +35,9 @@ func main() {
 	}
 
 	switch option {
+	case "-r":
+		runes := utf8.RuneCount(content)
+		fmt.Println(runes)
 	case "-b":
 		length := len(content)
 		fmt.Println(length)
