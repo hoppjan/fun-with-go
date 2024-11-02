@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 	"unicode/utf8"
 )
 
@@ -13,6 +14,7 @@ func main() {
 		log.Fatalln(
 			"Usage: gotoilet [OPTION] path/to/file..txt\n",
 			"Options:\n",
+			"-l\tcount lines\n",
 			"-r\tcount runes\n",
 			"-b\tcount bytes",
 		)
@@ -35,6 +37,9 @@ func main() {
 	}
 
 	switch option {
+	case "-l":
+		lines := strings.Count(string(content), "\n")
+		fmt.Println(lines)
 	case "-r":
 		runes := utf8.RuneCount(content)
 		fmt.Println(runes)
