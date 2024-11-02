@@ -42,7 +42,6 @@ func main() {
 		length := len(content)
 		fmt.Println(length)
 	default:
-		err = fmt.Errorf("unknown option: %s\n", option)
-		log.Fatal(err)
+		log.Fatalf("unknown option: %s\n", option)
 	}
 }
