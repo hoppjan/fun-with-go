@@ -14,6 +14,7 @@ func main() {
 		log.Fatalln(
 			"Usage: gotoilet [OPTION] path/to/file..txt\n",
 			"Options:\n",
+			"-w\tcount words\n",
 			"-l\tcount lines\n",
 			"-r\tcount runes\n",
 			"-b\tcount bytes",
@@ -37,6 +38,9 @@ func main() {
 	}
 
 	switch option {
+	case "-w":
+		words := len(strings.Fields(string(content)))
+		fmt.Println(words)
 	case "-l":
 		lines := strings.Count(string(content), "\n")
 		fmt.Println(lines)
